@@ -41,7 +41,11 @@ const horizontalLayout = {
       }`
   }
 };
-
+const verticalLayout = {
+    layout: {
+      type: 'verticalPresentation'
+    }
+  };
 // https://tokbox.com/developer/guides/broadcast/#predefined-layout-types
 const bestFitLayout = {
   layout: {
@@ -80,7 +84,7 @@ const start = (broadcastSessionId, streams, rtmp) =>
     if (R.path(['session'], activeBroadcast) === broadcastSessionId) {
       resolve(activeBroadcast);
     } else {
-      const layout = streams > 3 ? horizontalLayout : bestFitLayout;
+      const layout = streams > 3 ? verticalLayout : bestFitLayout;
 
       /**
        * This outputs property must be included in the request body
