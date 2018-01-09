@@ -80,7 +80,7 @@ const start = (broadcastSessionId, streams, rtmp) =>
     if (R.path(['session'], activeBroadcast) === broadcastSessionId) {
       resolve(activeBroadcast);
     } else {
-      const layout = streams > 3 ? bestFitLayout : horizontalLayout;
+      const layout = streams > 3 ? horizontalLayout : bestFitLayout;
 
       /**
        * This outputs property must be included in the request body
